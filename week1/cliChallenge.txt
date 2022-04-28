@@ -1,0 +1,7 @@
+Ans. 1: add a dot . before the dir name or the file name to hide them
+to display it in the CLI enter the command ls -a
+to make multiple folders simply add all folder names within single quotes separated by a space
+to make  nested dirs write mkdir -p i/created/this/nested/path
+to make addition in a txt file we add >> after the string. and single > if we want to overwrite
+message 1
+message 2

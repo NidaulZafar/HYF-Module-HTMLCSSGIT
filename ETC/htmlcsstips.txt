@@ -1,0 +1,28 @@
+## to add fonts (poppins) into html
+<link href="..." rel="stylesheet">
+example <link
+			href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap"
+			rel="stylesheet">
+## add linear gradient to text
+###first add linear gradient to the background in css
+    background: linear-gradient(to right, #494964, #6f6f89);
+    ### then add the following 
+	-webkit-background-clip: text; (to clip the background with the text)
+	-webkit-text-fill-color: transparent; (make the background hidden)
+
+## add border to the actual png imgs and not the border box 
+filter: drop-shadow(0px 5px 3px black); 
+
+## drop animation for imgs
+@keyframes drop(drop is the name of animation here) {
+	0% (starting/initial position) {
+		opacity: 0;
+		transform: translateY(-80px);
+	}
+	100% (end position) {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+in the css img tag we write the following code
+animation: drop (drop is the same name we gave to the keyframe query above) 1.5s ease;

@@ -1,8 +1,6 @@
 ## to add fonts (poppins) into html
 <link href="..." rel="stylesheet">
-example <link
-			href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap"
-			rel="stylesheet">
+example <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">
 ## add linear gradient to text
 ###first add linear gradient to the background in css
     background: linear-gradient(to right, #494964, #6f6f89);

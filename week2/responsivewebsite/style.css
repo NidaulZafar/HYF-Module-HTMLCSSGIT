@@ -147,6 +147,10 @@ width: 100%;
       margin-bottom: 50px;
       padding-right: 80px;
       }
+      .maintext a {
+        text-decoration: none;
+    }
+    
 .maintext a.button {
     font-size: 16px;
     margin: 0px;
@@ -162,9 +166,6 @@ a.whitebutton {
         margin-left: 20px;
         font-size: 16px;
     padding: 25px 60px;
-}
-.maintext a {
-    text-decoration: none;
 }
 
 .mainimg {
@@ -291,13 +292,14 @@ footer {
     padding-left: 20px;
 }
 
-@media (min-width: 760px) and (max-width: 1000px) {
+@media (min-width: 751px) and (max-width: 1000px) {
 
  #fullscreen {
      display: none;
  }
 
  #mobilefriendly {
+     width: 100%;
      display: contents;
      display: flex;
      position: fixed;
@@ -396,8 +398,68 @@ a.whitebutton {
 
 @media (max-width: 750px) {
 
+
+    #fullscreen {
+        display: none;
+    }
 .mainimg {
     display: none;
 }
 
+.menu-lines {
+    padding : 28px 20px;
+    position: relative;
+    float: left;
+    cursor: pointer;
+  }
+.nav-lines,
+.nav-lines::before,
+.nav-lines::after {
+  display: block;
+  background: rgb(0,0,0);
+  width: 20px;
+  height: 2px;
+  position: relative;
+  }
+
+.nav-lines::before,
+.nav-lines::after {
+  content: "";
+  position: absolute;
+}
+
+.nav-lines::before{
+  bottom: 7px;
+}
+
+.nav-lines::after {
+  top: 7px;
+}
+
+#mobilefriendly {
+    display: contents;
+    display: flex;
+    position: fixed;
+    }
+
+#mobilefriendly .logo {
+   width: 100px;
+   justify-content: center;
+}
+#mobilefriendly #search {
+   width: 20px;
+}
+
+
+#fsection {
+    display: flex;
+    flex-direction: column;
+    }
+
+    #footerrow {
+        padding-top: 50px;
+    }
+#fimgs {
+    display: none;
+}
 }

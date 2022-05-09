@@ -249,7 +249,7 @@ footer {
     width: 100%;
 }
 
-#footerrow {
+.footerrow {
     display: flex;
     flex-direction: column;
     flex-basis: 20%;
@@ -456,7 +456,7 @@ a.whitebutton {
     flex-direction: column;
     }
 
-    #footerrow {
+    .footerrow {
         padding-top: 50px;
     }
 #fimgs {

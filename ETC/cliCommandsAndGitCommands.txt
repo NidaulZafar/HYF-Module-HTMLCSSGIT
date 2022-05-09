@@ -9,6 +9,15 @@ syntax to add text in an existing file echo space double quotes >> filename
 Example echo "text here" >> <filename>
 
 
+mkdir folder1 folder2 folder3 (create 3 folders in the same place) 
+touch file1.txt file2.txt
+Cool website for CLI commands (https://alligator.io/workflow/command-line-creating-files-directories/)
+
+Cat <filename> shows the text in a text file. But if you want to edit the file then type:
+Nano <filename>
+
+
+
 Git commands
 Git init (to create a repo)
 Rm -rf .git (to remove a file from git)
@@ -46,6 +55,10 @@ Q. Different types of checkout?
 Q. Why sometimes we open a GitHub link and our CV gets displayed in the browser while at other times it shows all the files separately? 
 (https://hunny797.github.io/HYF-Module-HTMLCSSGIT/week1/
 https://github.com/hunny797/HYF-Module-HTMLCSSGIT/tree/main/week1)
+Q. How to check if there is a difference between the local repo and remote repo
+Q. Can we store a repo in the directory of another repo?
+Q. What is the different between border and outline in CSS?
+
 
 Git diff (shows the changes made)
 Git diff --staged (shows the changes between staging area and committed files)
@@ -57,6 +70,7 @@ Git branch -d <filename> (to delete a branch locally)
 
 Git branch --merged (to check the files that have been merged)
 
+Git switch <branchname> switches to the specified branch
 git checkout [branch-name] — switches to the specified branch and updates the working directory. $ git checkout -b [branch] — makes a new branch and switches to it
 Git merge <filename> (to merge a branch)
 
@@ -69,6 +83,12 @@ Git push origin --delete <filename> to delete branch remotely
 Git rm <filename> (deletes file from rep.. deletes both from working area and staging area at once) 
 git rm --cached <filename> (Removes the file from version control. It preserves the file locally
 git mv [file-original] [file-renamed] (Changes the filename and prepares it for commit)
+
+
+git checkout head~4 (head goes to 4th parent of head)
+git checkout C1 (head will go to C1)
+Git branch -f main head~3 (force a branch to move somewhere)
+git branch -f bugFix c0 (head will take bugFix(branch) to C0 by force
 
 
 

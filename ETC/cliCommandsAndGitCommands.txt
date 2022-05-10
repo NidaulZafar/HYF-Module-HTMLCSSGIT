@@ -40,7 +40,7 @@ git log --oneline
 display the log in only one line
 
 git log --stat
-shows the statistics. which file was changed and how many changes were made.
+shows the statistics. which file was changed who changed and when and how many changes were made.
 
 git log -p (patch- shows more details i.e., what was changed in the files)
 
@@ -48,6 +48,11 @@ git log -p <6digits sha key> can directly go to a particular log and also see th
 but will also show other commits
 git show -p <6digits sha key> can directly go to a particular log and also see the details by using other flags
 but will only show this one commit and none other.
+
+git log --oneline --decorate --graph --all 
+The --graph flag adds the bullets and lines to the leftmost part of the output.
+This shows the actual branching that's happening.
+The --all flag is what displays all of the branches in the repository.
 
 git push
 Uploads commits to an remote/online repository
@@ -95,7 +100,8 @@ git branch (lists all local branches in the current repository)
 Git branch <filename> (to create a branch)
 Git branch -d <filename> (to delete a branch locally)
 Git branch --merged (to check the files that have been merged)
-
+git branch alt-sidebar-loc 42a69f (this syntax will create a branch called "alt-sidebar-loc" 
+and commit it to the SHA number given)
 
 Git switch <branchname> switches to the specified branch
 git checkout [branch-name] — switches to the specified branch and updates the working directory. 

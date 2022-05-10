@@ -65,7 +65,7 @@ Git diff (shows the changes made)
 Git diff --staged (shows the changes between staging area and committed files)
 git diff <commit> (provide the commit hash parametes to check the diff between particular files)
 git diff <filename.js> (compare all the changes to a single file)
-
+git difftool (load external tool to view differences)
 
 git branch (lists all local branches in the current repository)
 Git branch <filename> (to create a branch)

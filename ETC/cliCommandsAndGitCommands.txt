@@ -45,6 +45,7 @@ git clone <git url copied from Github>
 Download an existing online repository to your PC
 
 Touch .gitignore (to create a ignore file)
+echo "*.tmp" >> .gitignore (to ask git to ignore all files with tmp ext)
 
 Git reset <filename> (to remove the file from the staging area)
 Git reset (reset all files)
@@ -62,6 +63,9 @@ Q. What is the different between border and outline in CSS?
 
 Git diff (shows the changes made)
 Git diff --staged (shows the changes between staging area and committed files)
+git diff <commit> (provide the commit hash parametes to check the diff between particular files)
+git diff <filename.js> (compare all the changes to a single file)
+
 
 git branch (lists all local branches in the current repository)
 Git branch <filename> (to create a branch)
@@ -71,7 +75,8 @@ Git branch -d <filename> (to delete a branch locally)
 Git branch --merged (to check the files that have been merged)
 
 Git switch <branchname> switches to the specified branch
-git checkout [branch-name] — switches to the specified branch and updates the working directory. $ git checkout -b [branch] — makes a new branch and switches to it
+git checkout [branch-name] — switches to the specified branch and updates the working directory. 
+$ git checkout -b [branch] — makes a new branch and switches to it
 Git merge <filename> (to merge a branch)
 
 
@@ -90,5 +95,15 @@ git checkout C1 (head will go to C1)
 Git branch -f main head~3 (force a branch to move somewhere)
 git branch -f bugFix c0 (head will take bugFix(branch) to C0 by force
 
+two commands to undo changes in Git -- one is using git reset and the other is using git revert
+git reset HEAD~1  (move head one branch backwards)
+git reset doesn't work for remote branches that others are using
+In order to reverse changes and share those reversed changes with others,
+ we need to use git revert.
 
+moving work around
+git cherry-pick <Commit1> <Commit2> <...>
+
+git rebase -i HEAD~4
+interactive rebase
 

@@ -205,8 +205,7 @@ a.whitebutton {
 .imgsrow .imgbunchin {
     display: inline-block;
     margin: 0 10px 30px;
-    border: 2px solid red;
-}
+    }
 
 .professionalcert {
     width: 100%;

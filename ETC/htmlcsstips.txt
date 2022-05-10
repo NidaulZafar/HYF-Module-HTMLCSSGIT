@@ -24,3 +24,22 @@ filter: drop-shadow(0px 5px 3px black);
 }
 in the css img tag we write the following code
 animation: drop (drop is the same name we gave to the keyframe query above) 1.5s ease;
+
+## to add variables in css
+
+###to give the var a property:
+:root {
+  --primary-color: #047aed;
+  --secondary-color: #1c3fa8;
+  --dark-color: #002240;
+  --light-color: #f4f4f4;
+  --success-color: #5cb85c;
+  --error-color: #d9534f;
+}
+
+### to invoke the var:
+.navbar {
+  background-color: var(--primary-color);
+}
+
+## cdnjs.com for fonts into stylesheet

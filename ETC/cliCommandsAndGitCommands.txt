@@ -35,14 +35,36 @@ Git checkout <filename> to move to the branch from the master file
 
 Git log (shows all commits)
 Git log -p (shows all commits and the contents of the file)
+
+git log --oneline
+display the log in only one line
+
+git log --stat
+shows the statistics. which file was changed and how many changes were made.
+
+git log -p (patch- shows more details i.e., what was changed in the files)
+
+git log -p <6digits sha key> can directly go to a particular log and also see the details by using other flags
+but will also show other commits
+git show -p <6digits sha key> can directly go to a particular log and also see the details by using other flags
+but will only show this one commit and none other.
+
 git push
 Uploads commits to an remote/online repository
+
+
+git remote add origin /s/remote-project/1
+(to add a remote repo)
+
+
 
 git pull
 Downloads commits from a ‘remote’/online repository
 
 git clone <git url copied from Github>
 Download an existing online repository to your PC
+
+git clone <URL> foldername  (to clone a repo but rename it of your choice)
 
 Touch .gitignore (to create a ignore file)
 echo "*.tmp" >> .gitignore (to ask git to ignore all files with tmp ext)
@@ -66,18 +88,23 @@ Git diff --staged (shows the changes between staging area and committed files)
 git diff <commit> (provide the commit hash parametes to check the diff between particular files)
 git diff <filename.js> (compare all the changes to a single file)
 git difftool (load external tool to view differences)
+git show <commit-hash> to view older changes.
+
 
 git branch (lists all local branches in the current repository)
 Git branch <filename> (to create a branch)
-
 Git branch -d <filename> (to delete a branch locally)
-
 Git branch --merged (to check the files that have been merged)
+
 
 Git switch <branchname> switches to the specified branch
 git checkout [branch-name] — switches to the specified branch and updates the working directory. 
 $ git checkout -b [branch] — makes a new branch and switches to it
 Git merge <filename> (to merge a branch)
+
+
+git merge remotes/<remote-name>/<remote-branch-name> master
+(merge the fetched changes into master)
 
 
 
@@ -107,3 +134,7 @@ git cherry-pick <Commit1> <Commit2> <...>
 git rebase -i HEAD~4
 interactive rebase
 
+git tag -a v2.0 -m "second tag"  (syntax to enter tags to most recent commits)
+git tag -a v1.0 a87984 (addition of SHA to tag previous commits)
+git tag (to check the avlbl tags)
+git tag -d v1.0 (to delete the tag)

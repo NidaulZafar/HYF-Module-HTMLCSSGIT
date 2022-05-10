@@ -146,6 +146,28 @@ git tag (to check the avlbl tags)
 git tag -d v1.0 (to delete the tag)
 
 
+git revert <SHA-of-commit-to-revert>
+
+Relative Commit References
+There are special characters called "Ancestry References" that we can use to tell Git.
+Those characters are:
+
+^ – indicates the parent commit
+~ – indicates the first parent commit
+Here's how we can refer to previous commits:
+
+the parent commit – the following indicate the parent commit of the current commit
+HEAD^
+HEAD~
+HEAD~1
+the grandparent commit – the following indicate the grandparent commit of the current commit
+HEAD^^
+HEAD~2
+the great-grandparent commit – the following indicate the great-grandparent commit of the current commit
+HEAD^^^
+HEAD~3
+
+
 
 
 Press Esc and then type :wq to save and exit.

@@ -148,4 +148,4 @@ git tag -d v1.0 (to delete the tag)
 
 
 
-
+Press Esc and then type :wq to save and exit.

@@ -202,7 +202,11 @@ a.whitebutton {
     justify-content: space-around;
     padding: 40px 60px 20px 60px;
     }
-
+.imgsrow .imgbunchin {
+    display: inline-block;
+    margin: 0 10px 30px;
+    border: 2px solid red;
+}
 
 .professionalcert {
     width: 100%;

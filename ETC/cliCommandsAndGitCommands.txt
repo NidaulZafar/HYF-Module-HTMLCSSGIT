@@ -144,3 +144,8 @@ git tag -a v2.0 -m "second tag"  (syntax to enter tags to most recent commits)
 git tag -a v1.0 a87984 (addition of SHA to tag previous commits)
 git tag (to check the avlbl tags)
 git tag -d v1.0 (to delete the tag)
+
+
+
+
+

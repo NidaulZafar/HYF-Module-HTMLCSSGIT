@@ -17,6 +17,91 @@ Cat <filename> shows the text in a text file. But if you want to edit the file t
 Nano <filename>
 
 
+creating a reptiles directory. To create the directory, you’ll use the mkdir command followed by the name of the directory
+ you’d like to create:
+
+$ mkdir reptiles
+We now have a new directory to play with. Let’s cd there for good measure:
+
+$ cd reptiles
+Creating Multiple Directories
+
+create multiple directories as arguments to the mkdir command:
+
+$ mkdir alligator crocodile snake
+A quick ls reveals that we now have three directories inside of our reptiles directory.
+
+Creating Nested Directories
+If we were to try mkdir snake/images everything would be fine because the snake directory already exists.
+
+To tell mkdir that we’d like to attempt to create each directory in the path, we use the -p or --parents argument:
+
+$ mkdir -p turtle/images
+The --parents argument creates each directory along the way, and can be used to create as many directories deep as you need
+ and/or the operating system will support:
+
+$ mkdir -p lizard/images/1/2/3/4/5/6
+Running tree lizard will reveal a series of nested directories that were just created.
+
+Creating Directories in Multiple Directories
+To create a directory named videos inside of the alligator and crocodile directories,
+ we could list out the paths of both directories:
+
+$ mkdir alligator/videos crocodiles/videos
+File name blobbing allows us to accomplish this with a bit less syntax:
+
+$ mkdir {alligator,crocodile}/videos
+Creating an Empty File
+Now that we have a whole bunch of directories created, let’s try our hand at creating some files.
+
+
+$ touch README.md
+If a file already exists, touch won’t complain. What it will do is set the modified time of the file to the current time,
+ effectively touching the file!
+
+Creating Empty Files
+Similar to how mkdir can accept multiple paths, touch can do the same thing:
+
+$ touch category.txt subcategory.txt
+Or leveraging file name blobbing:
+
+$ touch {category,subcategory}.txt
+Creating Empty Files in Multiple Directories
+Using touch isn’t limited to just file names, you can include paths to files as well:
+
+$ touch alligator/README.md crocodile/README.md
+To take things a step further, you can use the blobbing tip:
+
+$ touch {alligator,crocodile}/README.md
+Even one step further would be to create multiple files inside of multiple directories with additional blobbing:
+
+$ touch {alligator,crocodile}/{category,subcategory}.txt
+Creating a File with Text
+Empty files are great, but they can only get you so far. By leveraging the echo command and > operator, 
+we can create a brand new file and populate the file with some text, all without even opening a text editor:
+
+$ echo "See ya later, alligator" > crocodile/catch-phrase.txt
+Be careful though, the > means to create or overwrite a file. If the file already exists, the contents would be completely overwritten!
+
+A safer approach is to use >> in scenarios where the file may exist. This will create the file and append the text to it. 
+If the file exists, the text will be tacked on to the end of it:
+
+$ echo "After 'while, crocodile" >> alligator/catch-phrase.txt
+Creating a File with File Output
+Using > and >> with echo simply takes the output from echo and writes it to the file.
+ As it turns out, you can actually swap out echo for any command that writes to the standard output.
+
+For example, if you wanted to create a file that contained a list of all of the *.txt files in the directory, you could:
+
+$ ls **/*.txt >> directory.txt
+Running cat directory.txt reveals the output from the ls command that is now stored in directory.txt.
+
+
+
+
+
+
+
 
 Git commands
 Git init (to create a repo)

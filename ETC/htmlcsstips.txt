@@ -25,6 +25,55 @@ filter: drop-shadow(0px 5px 3px black);
 in the css img tag we write the following code
 animation: drop (drop is the same name we gave to the keyframe query above) 1.5s ease;
 
+## Another animation (slide in from top/bottom/left and right)
+/* Animations */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+### to apply go to the selected element and enter
+.class-name {
+	animation: slideInFromLeft 1s ease-in;
+}
+
+
+
 ## to add variables in css
 
 ###to give the var a property:

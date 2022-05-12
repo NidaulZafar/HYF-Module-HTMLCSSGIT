@@ -1,0 +1,47 @@
+Uses of sass
+##Create variables
+$primaryBtn : rgb() / hex code;
+$txtColor: rgb() / hex code / color name
+to invoke the variable simply write $primaryBtn
+
+## Nest diff things
+instead of writing
+header {
+
+    } 
+header button {
+
+}
+header .contact a {
+
+}
+we can write: 
+header {
+    background: red;
+    button {
+        background: $primaryBtn;
+    }
+    .contact {
+
+    }
+}
+even hover and pseudo classes can be added in the above code
+
+we can write: 
+header {
+    background: red;
+    button {
+        background: $primaryBtn;
+        &:hover {
+            background: red;
+        }
+        &::after {
+            content: "hi";
+        }
+    }
+    .contact {
+
+    }
+}
+
+

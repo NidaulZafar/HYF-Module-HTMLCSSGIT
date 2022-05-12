@@ -45,3 +45,61 @@ header {
 }
 
 
+## separate your codes in multiple parts
+for eg if you wanna keep code for header in a separate file you can name the file _header.scss
+and then in the style.scss file write code:
+@import "./header"; (ext is also not needed)
+
+## mixins (like a function in JS. Take some lines of code and use it wherever we want) 
+
+@mixin anyName() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+to invoke this mixin we go inside the css selector. Eg:
+header {
+    @include anyName();
+}
+
+P.S  the () after @mixin anyName can also have variables if we want to change that property only in some places and not all.
+example:
+@mixin anyName($direction, $background) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+    background: $background;
+}
+Whenever the above mixin is invoked, the flex-direction and background will look for the value of the variable.
+example:
+
+header {
+    @include anyName(column, red);
+}
+
+and
+
+.contact {
+    @include anyName(row, blue);
+}
+Now, the same snippet of anyName will be applied in the header and the contact class incl. display, justify content align etc. But the flex-direction for one will be col and another will be row
+and the bg color will be red for one and blue for the other.
+
+## Extensions
+if we have a selector (e.g h1) with many declarations (properties and their values) we just need to use @extend followed by the selector name to add all the selector declarations
+into the other selector. Example:
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+and in footer we need the same declarations so we can write:
+ footer {
+    @extend header;
+    flex-direction: $direction;
+    background: $background;
+ }

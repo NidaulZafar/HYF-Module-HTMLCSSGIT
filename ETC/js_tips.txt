@@ -80,14 +80,259 @@ typeof alert // "function"
 
 alert
 shows a message.
+alert("Hello");
+
+
+
 prompt
 shows a message asking the user to input text. It returns the text or, if Cancel button or Esc is clicked, null.
+syntax: result = prompt(title, [default]);
+
+example:
+let age = prompt('How old are you?', 100);
+alert(`You are ${age} years old!`); // You are 100 years old!
+
+
 confirm
 shows a message and waits for the user to press “OK” or “Cancel”. It returns true for OK and false for Cancel/Esc.
+syntax: result = confirm(question);
+
+example:
+let isBoss = confirm("Are you the boss?");
+alert( isBoss ); // true if OK is pressed
+
+
 All these methods are modal: they pause script execution and don’t allow the visitor to interact with the rest of the page until the window has been dismissed.
-
 There are two limitations shared by all the methods above:
-
 The exact location of the modal window is determined by the browser. Usually, it’s in the center.
 The exact look of the window also depends on the browser. We can’t modify it.
 
+##Type COnversions
+
+###String Conversions
+let value = true;
+alert(typeof value); // boolean
+
+value = String(value); // now value is converted to a string "true"
+alert(typeof value); // string
+
+###Number conversions
+1.    let num = Number(str); // converted to number 123
+      alert(typeof num); // number
+
+2.    alert( "6" / "2" ); // 3, strings are automatically converted to numbers
+
+alert( Number("   123   ") ); // 123
+alert( Number("123z") );      // NaN (error reading a number at "z")
+alert( Number(true) );        // 1
+alert( Number(false) );       // 0
+
+###Boolean conversions
+Boolean(value)
+
+Values that are intuitively “empty”, like 0, an empty string, null, undefined, and NaN, become false.
+Other values become true. For instance:
+
+alert( Boolean(1) ); // true
+alert( Boolean(0) ); // false
+alert( Boolean("hello") ); // true
+alert( Boolean("") ); // false
+
+
+##Maths
+
+Remainder %
+alert( 5 % 2 ); // 1, a remainder of 5 divided by 2
+alert( 8 % 3 ); // 2, a remainder of 8 divided by 3
+
+Exponentiation **
+The exponentiation operator a ** b raises a to the power of b.
+
+In school maths, we write that as 2². For instance:
+alert( 2 ** 2 ); // 2² = 4
+alert( 2 ** 3 ); // 2³ = 8
+alert( 2 ** 4 ); // 2⁴ = 16
+
+
+Just like in maths, the exponentiation operator is defined for non-integer numbers as well.
+For example, a square root is an exponentiation by ½:
+
+alert( 4 ** (1/2) ); // 2 (power of 1/2 is the same as a square root)
+alert( 8 ** (1/3) ); // 2 (power of 1/3 is the same as a cubic root)
+
+###   String concatenation with binary +
+Usually, the plus operator + sums numbers. But, if the binary + is applied to strings, it merges (concatenates) them:
+
+let s = "my" + "string";
+alert(s); // mystring
+Note that if any of the operands is a string, then the other one is converted to a string too. For example:
+
+alert( '1' + 2 ); // "12"
+alert( 2 + '1' ); // "21"
+See, it doesn’t matter whether the first operand is a string or the second one.
+
+Here’s a more complex example:
+alert(2 + 2 + '1' ); // "41" and not "221"
+Here, operators work one after another. The first + sums two numbers, so it returns 4,
+then the next + adds the string 1 to it, so it’s like 4 + '1' = '41'.
+
+alert('1' + 2 + 2); // "122" and not "14"
+Here, the first operand is a string, the compiler treats the other two operands as strings too. 
+The 2 gets concatenated to '1', so it’s like '1' + 2 = "12" and "12" + 2 = "122".
+
+The binary + is the only operator that supports strings in such a way. 
+Other arithmetic operators work only with numbers and always convert their operands to numbers.
+Here’s the demo for subtraction and division:
+
+alert( 6 - '2' ); // 4, converts '2' to a number
+alert( '6' / '2' ); // 3, converts both operands to numbers
+
+###   Numeric conversion, unary +
+applied to a single value, doesn’t do anything to numbers. But if the operand is not a number, the unary plus converts it into a number.
+For example:
+
+// No effect on numbers
+let x = 1;
+alert( +x ); // 1
+let y = -2;
+alert( +y ); // -2
+
+// Converts non-numbers
+alert( +true ); // 1
+alert( +"" );   // 0
+It actually does the same thing as Number(...), but is shorter.
+
+The need to convert strings to numbers arises very often.
+For example, if we are getting values from HTML form fields, they are usually strings. What if we want to sum them?
+
+The binary plus would add them as strings:
+
+let apples = "2";
+let oranges = "3";
+
+alert( apples + oranges ); // "23", the binary plus concatenates strings
+If we want to treat them as numbers, we need to convert and then sum them:
+
+let apples = "2";
+let oranges = "3";
+
+// both values converted to numbers before the binary plus
+alert( +apples + +oranges ); // 5
+
+// the longer variant
+// alert( Number(apples) + Number(oranges) ); // 5
+
+## Assignment (=)
+###   Chaining assignments
+Another interesting feature is the ability to chain assignments:
+
+let a, b, c;
+
+a = b = c = 2 + 2;
+
+alert( a ); // 4
+alert( b ); // 4
+alert( c ); // 4
+Chained assignments evaluate from right to left. First, the rightmost expression 2 + 2 is evaluated and then assigned to the variables 
+on the left: c, b and a. At the end, all the variables share a single value.
+
+Once again, for the purposes of readability it’s better to split such code into few lines:
+
+c = 2 + 2;
+b = c;
+a = c;
+
+###   Modify-in-place
+We often need to apply an operator to a variable and store the new result in that same variable.
+
+For example:
+let n = 2;
+n = n + 5;
+n = n * 2;
+This notation can be shortened using the operators += and *=:
+
+let n = 2;
+n += 5; // now n = 7 (same as n = n + 5)
+n *= 2; // now n = 14 (same as n = n * 2)
+
+alert( n ); // 14
+
+avlbl for all +  -  *  /
+Such operators have the same precedence as a normal assignment, so they run after most other calculations:
+let n = 2;
+n *= 3 + 5;
+alert( n ); // 16  (right part evaluated first, same as n *= 8)
+
+###   Increment/decrement
+Increasing or decreasing a number by one is among the most common numerical operations.
+
+So, there are special operators for it:
+
+Increment ++ increases a variable by 1:
+
+let counter = 2;
+counter++;        // works the same as counter = counter + 1, but is shorter
+alert( counter ); // 3
+Decrement -- decreases a variable by 1:
+
+let counter = 2;
+counter--;        // works the same as counter = counter - 1, but is shorter
+alert( counter ); // 1
+Important:
+Increment/decrement can only be applied to variables. Trying to use it on a value like 5++ will give an error.
+
+The operators ++ and -- can be placed either before or after a variable.
+
+When the operator goes after the variable, it is in “postfix form”: counter++.
+The “prefix form” is when the operator goes before the variable: ++counter.
+Both of these statements do the same thing: increase counter by 1.
+
+Is there any difference? Yes, but we can only see it if we use the returned value of ++/--.
+Let’s clarify. As we know, all operators return a value. Increment/decrement is no exception. 
+The prefix form returns the new value while the postfix form returns the old value (prior to increment/decrement).
+
+To see the difference, here’s an example:
+let counter = 1;
+let a = ++counter; // (*)
+alert(a); // 2
+In the line (*), the prefix form ++counter increments counter and returns the new value, 2. So, the alert shows 2.
+
+Now, let’s use the postfix form:
+let counter = 1;
+let a = counter++; // (*) changed ++counter to counter++
+alert(a); // 1
+In the line (*), the postfix form counter++ also increments counter but returns the old value (prior to increment). So, the alert shows 1.
+
+To summarize:
+If the result of increment/decrement is not used, there is no difference in which form to use:
+let counter = 0;
+counter++;
+++counter;
+alert( counter ); // 2, the lines above did the same
+
+If we’d like to increase a value and immediately use the result of the operator, we need the prefix form:
+let counter = 0;
+alert( ++counter ); // 1
+
+If we’d like to increment a value but use its previous value, we need the postfix form:
+let counter = 0;
+alert( counter++ ); // 0
+
+Increment/decrement among other operators
+The operators ++/-- can be used inside expressions as well. Their precedence is higher than most other arithmetical operations.
+For instance:
+let counter = 1;
+alert( 2 * ++counter ); // 4
+Compare with:
+let counter = 1;
+alert( 2 * counter++ ); // 2, because counter++ returns the "old" value
+Though technically okay, such notation usually makes code less readable. One line does multiple things – not good.
+While reading code, a fast “vertical” eye-scan can easily miss something like counter++ and it won’t be obvious that the variable increased.
+We advise a style of “one line – one action”:
+
+let counter = 1;
+alert( 2 * counter );
+counter++;
+
+Bitwise operators and Comma 
+Rare, so no details yet

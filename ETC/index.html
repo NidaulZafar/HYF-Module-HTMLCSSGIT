@@ -87,6 +87,24 @@
       //     ? "No login"
       //     : "Go to Hell";
       // alert(message);
+      //
+      //
+      //
+      let user = prompt("who's there?", "");
+      if (user == "Admin") {
+        let pass = prompt("password", "");
+        if (pass == "master") {
+          alert("Welcome!");
+        } else if (pass == null || pass == "") {
+          alert("cancelled");
+        } else {
+          alert("wrong password");
+        }
+      } else if (user == null || user == "") {
+        alert("cancelled");
+      } else {
+        alert("I dont know you");
+      }
     </script>
   </body>
 </html>

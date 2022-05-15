@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+
   <body>
     <script>
       // alert("I'm Javascript");
@@ -90,21 +91,136 @@
       //
       //
       //
-      let user = prompt("who's there?", "");
-      if (user == "Admin") {
-        let pass = prompt("password", "");
-        if (pass == "master") {
-          alert("Welcome!");
-        } else if (pass == null || pass == "") {
-          alert("cancelled");
-        } else {
-          alert("wrong password");
-        }
-      } else if (user == null || user == "") {
-        alert("cancelled");
-      } else {
-        alert("I dont know you");
-      }
+      // let user = prompt("who's there?", "");
+      // if (user == "Admin") {
+      //   let pass = prompt("password", "");
+      //   if (pass == "master") {
+      //     alert("Welcome!");
+      //   } else if (pass == null || pass == "") {
+      //     alert("cancelled");
+      //   } else {
+      //     alert("wrong password");
+      //   }
+      // } else if (user == null || user == "") {
+      //   alert("cancelled");
+      // } else {
+      //   alert("I dont know you");
+      // }
+      //       Output even numbers in the loop
+
+      // Use the for loop to output even numbers from 2 to 10.
+
+      // for (let i = 2; i <= 10; i++) {
+      //   if (i % 2 === 0) {
+      //     alert(i);
+      //   }
+      // }
+      //       Replace "for" with "while"
+      // Rewrite the code changing the for loop to while without altering its behavior (the output should stay same).
+
+      // for (let i = 0; i < 3; i++) {
+      //   alert( `number ${i}!` );
+      // }
+
+      // let i = 0;
+      // while (i < 3) {
+      //   alert(`number ${i}`);
+      //   i++;
+      // }
+      //       Repeat until the input is correct
+      // Write a loop which prompts for a number greater than 100.
+      // If the visitor enters another number – ask them to input again.
+      // The loop must ask for a number until either the visitor enters a
+      // number greater than 100 or cancels the input/enters an empty line.
+      // Here we can assume that the visitor only inputs numbers.
+      //  There’s no need to implement a special handling for a non-numeric input in this task.
+      // let enteredNumber;
+      // do {
+      //   enteredNumber = prompt("Give a number greater than 100", "");
+      // } while (enteredNumber <= 100 && enteredNumber);
+      //
+      //
+      //
+      //             Output prime numbers
+      //       An integer number greater than 1 is called a prime if it cannot be divided
+      //       without a remainder by anything except 1 and itself.
+      //       In other words, n > 1 is a prime if it can’t be evenly divided by
+      //       anything except 1 and n.
+      //       For example, 5 is a prime, because it cannot be divided without a remainder
+      //       by 2, 3 and 4.
+      //       Write the code which outputs prime numbers in the interval from 2 to n.
+      //       For n = 10 the result will be 2,3,5,7.
+      //       P.S. The code should work for any n, not be hard-tuned for any fixed value.
+
+      //       The code using a label:
+
+      // let n = 10;
+
+      // nextPrime:
+      // for (let i = 2; i <= n; i++) { // for each i...
+
+      //   for (let j = 2; j < i; j++) { // look for a divisor..
+      //     if (i % j == 0) continue nextPrime; // not a prime, go next i
+      //   }
+
+      //   alert( i ); // a prime
+      // }
+      //       Write the code using if..else which would correspond to the following switch:
+
+      // switch (browser) {
+      //   case 'Edge':
+      //     alert( "You've got the Edge!" );
+      //     break;
+
+      //   case 'Chrome':
+      //   case 'Firefox':
+      //   case 'Safari':
+      //   case 'Opera':
+      //     alert( 'Okay we support these browsers too' );
+      //     break;
+
+      //   default:
+      //     alert( 'We hope that this page looks ok!' );
+      // }
+
+      // let browser = prompt("what browser are you using?", "");
+      // if (browser === "Edge") {
+      //   alert("You've got the Edge!");
+      // } else if (
+      //   browser === "Firefox" ||
+      //   browser === "Chrome" ||
+      //   browser === "Safari" ||
+      //   browser === "Opera"
+      // ) {
+      //   alert("Okay we support these browsers too");
+      // } else {
+      //   alert("We hope that this page looks ok!");
+      // }
+      //       Rewrite "if" into "switch"
+      // Rewrite the code below using a single switch statement:
+      // let a = +prompt('a?', '');
+      // if (a == 0) {
+      //   alert( 0 );
+      // }
+      // if (a == 1) {
+      //   alert( 1 );
+      // }
+      // if (a == 2 || a == 3) {
+      //   alert( '2,3' );
+      // }
+      // let a = +prompt("a?", "");
+      // switch (a) {
+      //   case 0:
+      //     alert(0);
+      //     break;
+      //   case 1:
+      //     alert(1);
+      //     break;
+      //   case 2:
+      //   case 3:
+      //     alert("2,3");
+      //     break; //not required but made it future-proof
+      // }
     </script>
   </body>
 </html>
